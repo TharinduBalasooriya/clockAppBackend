@@ -4,7 +4,7 @@ let alarmSchema = new mongoose.Schema({
     hour: Number,
     minute: Number,
     ampm: String,
-    days: [String],
+    days: String,
     active: Boolean,
     sound: String,
 });
