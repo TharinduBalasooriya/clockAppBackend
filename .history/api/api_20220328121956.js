@@ -2,10 +2,7 @@ let router = require("express").Router();
 
 //Controllers
 const alarmController = require("../controllers/alarm_controller");
-const noteController = require("../controllers/note_controller");
 const worldclockcontroller=require("../controllers/world_controller");
-const reminderController = require("../controllers/reminder_controller");
-
 //home route
 router.get("/", (req, res) => {
   res.send("Clock API");
@@ -18,27 +15,10 @@ router.route("/alarms").post(alarmController.addAlarm);
 router.route("/alarms/:id").delete(alarmController.deleteAlarm);
 router.route("/alarms/:id").put(alarmController.updateAlarm);
 
-//Note routes
-router.route("/notes").get(noteController.getNotes);
-router.route("/notes/:id").get(noteController.getNoteById);
-router.route("/notes").post(noteController.addNote);
-router.route("/notes/:id").delete(noteController.deleteNote);
-router.route("/notes/:id").put(noteController.updateNote);
-
 //WorldClock routes
 router.route("/worldclock").get(worldclockcontroller.getWorldclcok);
 router.route("/worldclock/:id").get(worldclockcontroller.getWorldclcokId);
 router.route("/worldclock").post(worldclockcontroller.addWorldclock);
 router.route("/worldclock/:id").delete(worldclockcontroller.deleteWorldclcok);
 router.route("/worldclock/:id").put(worldclockcontroller.updateWorldclcok);
-
-//Reminder routes
-
-router.route("/reminders").get(reminderController.getReminders);
-router.route("/reminders/:id").get(reminderController.getReminderByid);
-router.route("/reminders").post(reminderController.addReminder);
-router.route("/reminders/:id").delete(reminderController.deleteReminder);
-router.route("/reminders/:id").put(reminderController.updateReminder);
-
-
 module.exports = router;
