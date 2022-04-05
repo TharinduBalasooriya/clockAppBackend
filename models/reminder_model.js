@@ -5,7 +5,7 @@ let reminderSchema = new mongoose.Schema({
     name :String,
     date :String,
     time : String,
-    repeat : [String],
+    repeat : String,
     priority : String,
     note : String,
 
