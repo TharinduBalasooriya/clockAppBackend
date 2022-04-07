@@ -7,7 +7,11 @@ let noteSchema = new mongoose.Schema({
         type: Date,
         default: Date.now(),
     },
-    noteColor: String,
+    // noteColor: String,
+    red: Number,
+    green: Number,
+    blue: Number
+
 });
 
 module.exports = mongoose.model("note", noteSchema);
